@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.downTimer = new System.Windows.Forms.Timer(this.components);
             this.oclock = new System.Windows.Forms.Timer(this.components);
+            this.scoreLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // downTimer
@@ -45,11 +46,24 @@
             this.oclock.Interval = 1000;
             this.oclock.Tick += new System.EventHandler(this.oclock_Tick);
             // 
+            // scoreLabel
+            // 
+            this.scoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scoreLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.scoreLabel.Location = new System.Drawing.Point(12, 205);
+            this.scoreLabel.Name = "scoreLabel";
+            this.scoreLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.scoreLabel.Size = new System.Drawing.Size(124, 38);
+            this.scoreLabel.TabIndex = 0;
+            this.scoreLabel.Text = "label1";
+            this.scoreLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(475, 598);
+            this.Controls.Add(this.scoreLabel);
             this.DoubleBuffered = true;
             this.Name = "Form1";
             this.Text = "Form1";
@@ -66,6 +80,7 @@
 
         private System.Windows.Forms.Timer downTimer;
         private System.Windows.Forms.Timer oclock;
+        private System.Windows.Forms.Label scoreLabel;
     }
 }
 

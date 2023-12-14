@@ -259,6 +259,7 @@ namespace Tetris
             Font font = new Font("Gill Sans MT", 25, FontStyle.Bold);
             SolidBrush brush = new SolidBrush(Color.FromArgb(255, 254, 255, 255));
             g.DrawString("NEXT", font, brush, nextX, nextY - Game.Cell_Size);
+            g.DrawString("SCORE", font, brush, edge_Size_X * Game.Cell_Size - 10, (edge_Size_Y * 4) * Game.Cell_Size);
 
             //플레이시간
             g.DrawString("TIME", font, brush, edge_Size_X * Game.Cell_Size, (Game.BoardY - 2) * Game.Cell_Size);
@@ -266,6 +267,9 @@ namespace Tetris
             string minuteStr = playTime / 60 < 10 ? "0" + playTime / 60 : "" + playTime / 60;
             g.DrawString(minuteStr + ":" + secondStr,
                 font, brush, edge_Size_X * Game.Cell_Size, (Game.BoardY) * Game.Cell_Size);
+
+            scoreLabel.Location = new Point(edge_Size_X * Game.Cell_Size - 10, (edge_Size_Y * 5) * Game.Cell_Size);
+            scoreLabel.Text = Convert.ToString(myGame.gameScore);
         }
         #endregion
 
